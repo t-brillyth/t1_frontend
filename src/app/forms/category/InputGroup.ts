@@ -11,7 +11,7 @@ export const InputGroup: any[] =
     },
     {
       input: 'description',
-      labelText: 'Describe la categoria',
+      labelText: 'Describa la categoria',
       labelFor: 'description',
       inputType: 'text',
       placeholder: '',

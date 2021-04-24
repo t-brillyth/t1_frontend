@@ -32,7 +32,7 @@ export class UserslistComponent implements OnInit, OnDestroy {
     private _Userservice: UserService,
     private _store: Store<AppState>
   ) {
-      this.title = 'Lista de usuarios';
+      this.title = 'Usuarios';
     }
 
   ngOnInit() {

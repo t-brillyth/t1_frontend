@@ -14,7 +14,7 @@ export const InputGroup: any[] =
       labelText: 'Contraseña',
       labelFor: 'password',
       inputType: 'password',
-      placeholder: 'Contraseña',
+      placeholder: '*******',
       name: 'password',
       class: 'form-control pl-3 rounded-2'
     }

@@ -5,7 +5,7 @@ export const InputGroup: any[] =
       labelText: 'Nombre',
       labelFor: 'name',
       inputType: 'text',
-      placeholder: 'Ingrese su nombre',
+      placeholder: '',
       name: 'name',
       class: 'form-control col-sm-12'
     },
@@ -14,16 +14,16 @@ export const InputGroup: any[] =
       labelText: 'Apellidos',
       labelFor: 'lastname',
       inputType: 'text',
-      placeholder: 'Ingrese sus apellidos',
+      placeholder: '',
       name: 'lastname',
       class: 'form-control col-sm-12'
     },
     {
       input: 'address',
-      labelText: 'Direccion',
+      labelText: 'Dirección de residencia',
       labelFor: 'address',
       inputType: 'text',
-      placeholder: 'Ingrese su direccio de residencia',
+      placeholder: '',
       name: 'address',
       class: 'form-control col-sm-12'
     },
@@ -32,7 +32,7 @@ export const InputGroup: any[] =
       labelText: 'Cédula',
       labelFor: 'identification',
       inputType: 'number',
-      placeholder: 'Ingrese su cédula',
+      placeholder: '',
       name: 'identification',
       class: 'form-control col-sm-12'
     },
@@ -41,7 +41,7 @@ export const InputGroup: any[] =
       labelText: 'Teléfono',
       labelFor: 'phone',
       inputType: 'number',
-      placeholder: 'Ingrese el numero teléfonico',
+      placeholder: '',
       name: 'phone',
       class: 'form-control col-sm-12'
     },
@@ -50,25 +50,25 @@ export const InputGroup: any[] =
       labelText: 'Nombre de usuario',
       labelFor: 'username',
       inputType: 'text',
-      placeholder: 'Ingrese un nombre de usuario',
+      placeholder: '',
       name: 'username',
       class: 'form-control col-sm-12'
     },
     {
       input: 'email',
-      labelText: 'Email',
+      labelText: 'Correo electrónico',
       labelFor: 'email',
       inputType: 'email',
-      placeholder: 'Ingrese su correo electrónico',
+      placeholder: '',
       name: 'email',
       class: 'form-control col-sm-12'
     },
     {
       input: 'email_confirmation',
-      labelText: 'Confirmar email',
+      labelText: 'Confirmar Correo',
       labelFor: 'email_confirmation',
       inputType: 'email',
-      placeholder: 'Confirme su correo electrónico',
+      placeholder: '',
       name: 'email_confirmation',
       class: 'form-control col-sm-12'
     },
@@ -77,7 +77,7 @@ export const InputGroup: any[] =
       labelText: 'Contraseña',
       labelFor: 'password',
       inputType: 'password',
-      placeholder: '*****',
+      placeholder: '',
       name: 'password',
       class: 'form-control'
     },
@@ -86,7 +86,7 @@ export const InputGroup: any[] =
       labelText: 'Confirmar contraseña',
       labelFor: 'password_confirmation',
       inputType: 'password',
-      placeholder: 'Confirmar contraseña',
+      placeholder: '',
       name: 'password_confirmation',
       class: 'form-control'
     }
