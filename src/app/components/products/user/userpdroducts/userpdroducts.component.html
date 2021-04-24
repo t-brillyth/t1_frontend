@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="mt-2 text-left">{{title}}</h1>
+  </div>
+</div>
+<hr class="line orange">
+<div id="containDashboard" class="row g-4" *ngIf="!cargando">
+  <div *ngFor="let product of allProducts" class="col-4 my-4">
+    <div class="card">
+      <img
+        src="https://i.hipertextual.com/2017/07/31/Mosaico2-copia_zps69zrfjeq.jpg"
+        class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Categoria:</strong> <span>{{product.category.name}}</span></li>
+        <li class="list-group-item"><strong>Precio:</strong> <span>{{product.price}}</span></li>
+        <li class="list-group-item"><strong>Descuento:</strong> <span>{{product.discount}}</span></li>
+        <li class="list-group-item"><strong>Disponibles:</strong> <span>{{product.stock}}</span></li>
+        <li class="list-group-item"><strong>Marca:</strong> <span>{{product.brand}}</span></li>
+        <li class="list-group-item"><strong>Referencia:</strong> <span>{{product.code}}</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="p-3 mb-2 bg-success text-white text-center" role="alert" *ngIf="cargando">
+    <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+    Cargando .....
+  </div>
+</div>

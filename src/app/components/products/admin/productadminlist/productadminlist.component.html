@@ -1,0 +1,55 @@
+<div class="col-lg-12 col-md-12 col-xs-12">
+  <div class="">
+    <div class="row">
+      <div class="col-6">
+        <h1 class="mt-2 text-left">{{title}}</h1>
+      </div>
+      <div class="col-6 text-end">
+        <app-custom-button [routerLink]="['/products-add-admin']" [ButtonClass]="'btn btn-orange mt-3'"
+          [TextButton]="'Agregar'" [SubmitVal]="true"></app-custom-button>
+      </div>
+    </div>
+    <hr class="line orange">
+    <div class="row" *ngIf="!cargando">
+
+      <table class="table table-hover table-bordered">
+        <thead class="table-warning">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descuento</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Marca</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of allProducts">
+            <td>{{product.name}}</td>
+            <td>{{product.category.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.discount}}</td>
+            <td>{{product.stock}}</td>
+            <td>{{product.code}}</td>
+            <td>{{product.brand}}</td>
+            <td>
+              <button type="button" class="btn btn-danger" *ngIf="product.delete === 1"
+                (click)="delete(product.internal_url)">Inactivar</button>
+              <button type="button" class="btn btn-success" *ngIf="product.delete === 0"
+                (click)="delete(product.internal_url)">Activar</button>
+              <button type="button" class="btn btn-info" (click)="goToEdit(product.internal_url)">Editar</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="p-3 mb-2 bg-success text-white text-center" role="alert" *ngIf="cargando">
+      <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+      Cargando .....
+    </div>
+  </div>
+</div>

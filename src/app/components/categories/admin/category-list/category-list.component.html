@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-6">
+    <h1 class="mt-2 text-left">{{title}}</h1>
+  </div>
+  <div class="col-6 text-end">
+    <app-custom-button [routerLink]="['/add-admin-category']" [ButtonClass]="'btn btn-blue mt-3'"
+      [TextButton]="'Agregar'" [SubmitVal]="true"></app-custom-button>
+  </div>
+</div>
+
+<hr class="line blue">
+<div class="row">
+  <div class="col-12"  *ngIf="!cargando">
+    <table class="table table-hover table-bordered">
+      <thead class="table-info">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Estado</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of this.allCategories">
+          <td>{{ category.name}}</td>
+          <td>{{ category.description | slice:0:60}}</td>
+          <td>
+            <span *ngIf="category.delete === 0">
+              Inactivo
+            </span>
+            <span *ngIf="category.delete === 1">
+              Activo
+            </span>
+          </td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="goToEdit(category.internal_url)">Editar</button>
+            <button type="button" class="btn btn-danger" *ngIf="category.delete === 1"
+              (click)="delete(category.internal_url)">Inactivar</button>
+            <button type="button" class="btn btn-info" *ngIf="category.delete === 0"
+              (click)="delete(category.internal_url)">Activar</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="p-3 mb-2 bg-success text-white text-center" role="alert" *ngIf="cargando">
+    <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+    Cargando .....
+  </div>
+
+</div>

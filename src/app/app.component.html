@@ -1,0 +1,49 @@
+<header>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="logo">Hulk Store</div>
+    </div>
+    <div class="col-sm-6 text-end pr-5">
+      <p class="nav-btn text-white mt-0 pt-1">☰</p>
+    </div>
+  </div>
+
+</header>
+
+<div class="container p-0">
+
+  <div class="sidebar">
+      <nav>
+          <a [routerLink]="['']" class="logoMovile"><span>Hulk Store</span></a>
+          <ul *ngIf="identity === null">
+              <li class="active" [routerLink]="['login']">
+                  <a>Iniciar sesión</a>
+              </li>
+              <li [routerLink]="['register']">
+                  <a>Registro</a>
+              </li>
+          </ul>
+          <ul *ngIf="identity !== null && identity.role !== null ">
+              <li *ngIf="identity.role ===2" [routerLink]="['/user-list-products']">
+                  <a>Productos</a>
+              </li>
+              <li [routerLink]="['/products-list-admin']" *ngIf=" identity.role !== null && identity.role ===1">
+                  <a>Productos</a>
+              </li>
+              <li *ngIf="  identity.role !== null && identity.role ===1" [routerLink]="['/all-admin-category']">
+                  <a>Categorias</a>
+              </li>
+              <li [routerLink]="['/users-list']" *ngIf=" identity.role !== null && identity.role ===1">
+                  <a>Usuarios</a>
+              </li>
+              <li [routerLink]="['logout',1]" *ngIf="identity !== null">
+                  <a>Salir</a>
+              </li>
+          </ul>
+      </nav>
+  </div>
+
+  <div class="main-content">
+      <router-outlet></router-outlet>
+  </div>
+</div>
